@@ -1,0 +1,141 @@
+
+<% include ../layout/header.ejs %>
+
+<div class="main">
+  <div class="container">
+
+		<% if(act === undefined) {%>
+
+    <div class="content user-settings-box content-shadow">
+			<div class="page-block-header">
+					Общее
+			</div>
+			<div class="settings-panel">
+
+				<div class="settings-line">
+					<div class="settings-info-block settings-column">
+						<div class="settings-row">
+								<div class="settings-label">Логин</div>
+							<div class="settings-property"><%=userInfo.login%></div>
+							<div class="settings-change-container">
+								<span class="link settings-change" title="Редактировать"><i class="icon-pencil"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="settings-change-block settings-column">
+						<div class="settings-row">
+							<div class="settings-label">Новый логин</div>
+							<form class="form-container">
+								<input type="text" class="settings-editor" name="change-login">
+							</form>
+							<div class="settings-change-container">
+									<span class="link settings-change" id="change-login-ok" title="Сохранить"><i class="icon-ok"></i></span>
+								<span class="link settings-change" title="Отменить"><i class="icon-cancel"></i></span>
+							</div>
+						
+						</div>	
+					</div>
+				</div>
+
+				<div class="settings-line">
+						<div class="settings-info-block settings-column">
+							<div class="settings-row">
+								<div class="settings-label">Пароль</div>
+								<div class="settings-property">••••••</div>
+								<div class="settings-change-container">
+									<span class="link settings-change"><i class="icon-pencil"></i></span>
+								</div>
+							</div>		
+						</div>
+
+						<div class="settings-change-block settings-column">
+							<div class="settings-row bottom-space">
+									<label class="settings-label" for="old-pwd">Старый пароль</label>
+									<form class="form-container">
+										<input type="password" class="settings-editor" id="old-pwd" name="old-pwd">
+									</form>
+									<div class="settings-change-container">
+											<span class="link settings-change"><i class="icon-cancel"></i></span>
+										</div>
+							</div>
+							<div class="settings-row bottom-space">
+									<label class="settings-label" for="new-pwd">Новый пароль</label>
+									<form class="form-container">
+										<input type="password" class="settings-editor" id="new-pwd" name="new-pwd">
+									</form>
+							</div>
+							<div class="settings-row bottom-space">
+									<label class="settings-label" for="confirm-pwd">Повторите пароль</label>
+									<form class="form-container">
+										<input type="password" class="settings-editor" id="confirm-pwd" name="confirm-pwd">
+									</form>
+							</div>
+							<div class="settings-row">
+									<div class="settings-label"></div>
+									<div class="form-container">
+											<button class="change-pwd-btn">Изменить пароль</button>
+									</div>
+							</div>
+					</div>
+					</div>
+			</div>
+			<div class="page-block-footer">
+				Вы можете <a href="/settings?act=deactivate">удалить свой аккаунт </a>
+			</div>
+    </div>
+
+    <div class="sidebar">
+				<div class="box ui-rmenu content-shadow">
+						<a class="ui-rmenu-item item_active" id="ui-rmenu-general" href="/settings"><span>Общее</span></a>
+						<a class="ui-rmenu-item" id="ui-rmenu-general" href="/settings?act=main"><span>Основное</span></a>
+				</div>
+		</div>
+		
+		<%} else if (act === 'main') {%>
+
+			<div class="content user-settings-box content-shadow">
+					<div class="page-block-header">
+							Основное
+						</div>
+						<div class="pedit-panel">
+							<div class="pedit-line">
+								<div class="pedit-column">
+
+									<div class="pedit-row bottom-space">
+										<div class="pedit-label">Имя:</div>
+										<div class="form-container">
+											<input type="text" class="pedit-editor" name="pedit-firstname" id="pedit-firstname">
+										</div>
+									</div>
+
+									<div class="pedit-row">
+										<div class="pedit-label">Фамилия:</div>
+										<div class="form-container">
+											<input type="text" class="pedit-editor" id="pedit-lastname" name="pedit-firstname">
+										</div>
+									</div>
+
+								</div>
+										
+							</div>
+						</div>
+						<div class="page-block-footer">
+							<button class="save-pedit-btn">Сохранить</button>
+						</div>	
+				 </div>
+		 
+				 <div class="sidebar">
+						 <div class="box ui-rmenu content-shadow">
+								 <a class="ui-rmenu-item" id="ui-rmenu-general" href="/settings"><span href="">Общее</span></a>
+								 <a class="ui-rmenu-item item_active" id="ui-rmenu-general" href="/settings?act=main"><span>Основное</span></a>
+						 </div>
+				 </div>
+		<%}%>
+
+  </div>
+   
+
+  </div>
+</div>
+
+<% include ../layout/footer.ejs %>

@@ -1,0 +1,62 @@
+<% include ../layout/header.ejs %>
+
+<div class="main">
+  <div class="container">
+    <div class="content">
+      <% if(posts.length) {%>
+         
+      <% posts.forEach( post => { %>
+      <div class="post content-shadow">
+        <div class="top">
+          <h2><a href="/posts/<%= post.url %>"><%= post.title %></a></h2>
+        </div>
+        <div class="body"><p><%=post.body%></p></div>
+        <div class="bottom">
+          <div class="author">
+
+						<a href="/">Комментарии</a>
+					</div>
+        </div>
+      </div>
+      <%})%> 
+
+      <div class="pagination">
+
+        <% if (current > 1 ) { %>
+        <a class="button button-previous" href="/users/<%=_user.login%>/<%= Number(current) - 1 %>"><i class="icon-left-open-big"></i></a>
+        <a class="button" href="/users/<%=_user.login%>">На первую</a>
+        <% } %> 
+
+        <% if (current == 1 ) { %>
+        <a class="button button--back-to-main" href="/">На главную</a> 
+        <% } %> 
+
+        <% if (pages > 0 && current < pages) { %>
+        <a class="button button-next" href="/users/<%=_user.login%>/<%= Number(current) + 1 %>"><i class="icon-right-open-big"></i></a> 
+        <% } %>
+
+      </div>
+      <%} else {%>
+      <div class="no-posts"><span class="no-posts-msg">Посты отсутствуют</span></div>
+      <%}%>
+
+    </div>
+
+    <div class="sidebar">
+       <div class="box auth content-shadow">
+        <ul>
+          <li><a href="/api/auth/logout">Выход</a></li>
+        </ul>
+      <div class="add-post-btn">
+        <a href="/post/add"><i class="icon-plus"></i></a>
+      </div>
+    </div>
+
+  </div>
+   
+
+  </div>
+</div>
+
+
+<% include ../layout/footer.ejs %>

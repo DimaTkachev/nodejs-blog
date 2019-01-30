@@ -1,0 +1,147 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::selection
+	background-color: $primaryColor
+	color: #fff
+
+html
+	display: flex
+	flex-direction: column
+	min-height: 100%
+
+a
+	text-decoration: none
+	color: $primaryColor
+
+input, textarea
+	box-sizing: border-box
+
+button
+	outline: none
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	overflow-x: hidden
+	box-sizing: border-box
+	display: flex
+	flex-direction: column
+	flex: auto
+	color: $blackColor
+	background-color: $whiteColor
+	padding-top: $headerHeight + $freeSpace
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+@import "header"
+
+.main  
+  display: flex 
+  flex-direction: column 
+  flex-grow: 1 
+
+  .container  
+    .content  
+      flex: 3 
+      margin-right: $freeSpace 
+      margin-bottom: $freeSpace 
+      // padding: $freeSpace 
+      min-height: 100px 
+      // border: 1px solid $greyColor   
+
+
+@import "components/sidebar"
+
+.pagination
+	display: flex
+	justify-content: space-between
+	font-size: 1.15rem
+
+
+.add-post-btn
+	position: fixed
+	right: 35px
+	bottom: 35px
+	background-color: $primaryColor
+	width: 60px
+	height: 60px
+	z-index: 1000
+	border-radius: 50%
+	opacity: .9	
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+	>a
+		display: block
+		text-align: center
+		line-height: 60px
+		.icon-plus
+			font-size: 30px
+			color: $whiteColor
+
+.button-previous
+	>.icon-left-open-big::before
+		box-sizing: border-box
+		transition: all .2s ease
+		font-size: 16px
+	&:hover .icon-left-open-big::before
+		padding-right: 5px
+
+.button-next
+	>.icon-right-open-big::before
+		box-sizing: border-box
+		transition: all .2s ease
+		font-size: 16px
+	&:hover .icon-right-open-big::before
+		padding-left: 5px
+.no-posts
+	text-align: center
+	font-size: 1.25rem
+	color: $blackColor	
+
+
+.content-shadow
+	border-radius: $borderRadius
+	box-shadow: $contentShadow
+	
+			
+		
+
+       
+@import "forms"     
+       
+@import "typography"
+
+@import "links"
+
+@import "components/auth"
+
+@import "components/post"
+
+@import "components/comments"
+
+@import "user-box"	
+
+@import "footer"
+
+@import "media" // Always at the end

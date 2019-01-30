@@ -1,0 +1,78 @@
+.post  
+  display: flex 
+  flex-direction: column 
+  padding: $freeSpace 
+  margin-bottom: $freeSpace 
+  background-color: $whiteColor
+  text-overflow: ellipsis
+  overflow: hidden
+  .top  
+    h2  
+      margin-top: 0       
+  .body  
+    p  
+      text-align: justify 
+  .bottom  
+    font-size: 0.9em 
+    display: flex 
+    justify-content: space-between 
+   
+.add-post
+  margin-bottom: $freeSpace
+  padding: $freeSpace
+  width: 100%
+  min-height: 100px
+  border: 1px solid $greyColor
+  background-color: $whiteColor
+  form
+    >h2
+      margin-top: 0
+      margin-bottom: 30px
+    .buttons
+      display: flex
+      justify-content: flex-end
+      button
+        margin-left: $freeSpace * 2
+    #post-body
+      border-radius: $borderRadius
+      min-height: 200px !important
+      background-color: $whiteColor !important
+      border: 1px solid $greyColor 
+      padding: 8px 10px
+      outline: none
+    #post-title
+      border-radius: $borderRadius
+      border: 1px solid $greyColor
+  #fileinfo
+    margin-top: $freeSpace
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    border: 1px solid $greyColor
+    padding: $freeSpace
+    background-color: $whiteColor
+    border-radius: $borderRadius
+    .custom-file-upload
+      background-color: $primaryColor
+      overflow: hidden
+      position: relative
+      cursor: pointer
+      border: 1px solid $greyColor
+      padding-left: $freeSpace
+      padding-right: $freeSpace
+      display: flex
+      align-items: center
+      border-radius: $borderRadius
+      height: 50px
+      input[type=file]
+        display: none
+      .add-file-plus
+        color: #fff 
+        font-size: 22px
+    .img-container
+      height: 50px
+      border: 1px solid $greyColor
+      margin-right: $freeSpace
+      img
+        height: 100%

@@ -1,0 +1,52 @@
+.comments
+	display: flex
+	flex-direction: column
+	padding: $freeSpace
+	margin-bottom: $freeSpace
+	background-color: $whiteColor
+	h3
+		margin-top: 0
+	form.comment
+		display: none
+		flex-direction: column
+		max-width: 500px
+		margin-top: $freeSpace * 0.4
+		textarea
+			margin-bottom: $freeSpace * 0.8
+			border-radius: 6px
+			border-color: darken($greyColor, 30%)
+			resize: none
+			overflow-y: auto !important
+			padding: 7px 12px 9px 12px
+			&::placeholder
+				font-style: normal
+				font-size: 0.9em
+				letter-spacing: normal
+		.buttons
+			align-self: flex-end
+			display: flex
+			button
+				margin-left: $freeSpace
+				font-size: 0.9em
+
+	.comment-list
+		&>ul
+			margin-bottom: $freeSpace * 1.3
+		ul
+			list-style: none
+			border-left: 1px solid $greyColor
+			padding-left: $freeSpace * 1.2
+			&:first-child
+				padding-left: 0
+				border-left: 0
+			li
+				display: flex
+				flex-direction: column
+				margin-top: $freeSpace
+				.head
+					display: flex
+					.date
+						margin-left: 7px
+						font-style: italic
+						color: lighten($blackColor, 45)
+						font-size: 13px

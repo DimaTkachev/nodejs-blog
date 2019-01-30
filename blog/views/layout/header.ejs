@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <base href="/" />
+
+    <title>Blog</title>
+    <meta name="description" content="" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- Template Basic Images Start -->
+    <link rel="icon" href="/images/favicon/favicon.png" />
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+    <!-- favicon for apple devices -->
+    <!-- Template Basic Images End -->
+
+    <!-- Custom Browsers Color Start -->
+    <meta name="theme-color" content="#209CEE" />
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="<%= assetFingerprint('/stylesheets/main.min.css') %>" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="/" class="logo"></a>
+        <% if(!user.id && !user.login) { %>
+          <ul class="menu">
+            <li><a href="#">Вам нужно зарегистрироваться!</li>
+          </ul>
+          <%} else {%>
+        <ul class="menu">
+          <li><a href="/settings">Настройки</a></li>
+          <li><a href="/users/<%= user.login %>"><%= user.login %></a></li>
+        </ul>
+        <%}%>
+      </div>
+    </header>
+  </body>
+</html>
